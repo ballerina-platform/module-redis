@@ -3,6 +3,8 @@
 Ballerina connector for Redis is connecting Redis via Ballerina language easily. This module provides the functionality required to access and manipulate key-value data stored in a Redis database this module provides API functions for manipulating Redis String, Hash, List, Set and Sorted Set data types.
 Currently the provided functionality is limited to usage Redis as a database/cache. Broker functionality of Redis is not yet exposed through this module.
 
+This module supports Ballerina Swan Lake Beta 2 version
+
 ## Quickstart
 
 ### Set value to a key
