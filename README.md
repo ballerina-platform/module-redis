@@ -4,13 +4,11 @@
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-redis.svg)](https://github.com/ballerina-platform/module-ballerinax-redis/commits/master)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-The `redis` is a [Ballerina](https://ballerina.io/) connector for Redis
-
 [Redis](https://redis.io/) is an open source, in-memory data structure store, used as a database, cache, and message broker. Redis provides data structures such as strings, hashes, lists, sets, sorted sets.
 
 This connector provides operations for connecting and interacting with Redis server over the network. 
 For more information about configuration and operations, go to the module. 
-- [`redis`](https://docs.central.ballerina.io/ballerinax/redis/latest)
+- [`ballerinax/redis`](https://docs.central.ballerina.io/ballerinax/redis/latest)
 
 # Building from the Source
 ## Setting Up the Prerequisites

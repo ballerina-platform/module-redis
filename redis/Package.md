@@ -1,14 +1,15 @@
 Connects to Redis from Ballerina
 
 ### Package Overview
-#### Compatibility
-|                                                                                    | Version               |
-|------------------------------------------------------------------------------------|-----------------------|
-| Ballerina Language Version                                                         | **Swan Lake Beta 2**  |
 
-The `redis` is a [Ballerina](https://ballerina.io/) connector for Redis.
+The `ballerinax/redis` is a [Ballerina](https://ballerina.io/) connector for Redis.
 
-This package provides the capability to easily access Redis.
+This package provides the capability to easily access Redis and it provides the functionality required to access and manipulate key-value data stored in a Redis database.
+
+## Compatibility
+|                             |            Versions      |
+|:---------------------------:|:------------------------:|
+| Ballerina Language          |     Swan Lake Beta 2     |
 
 ### Report Issues
 

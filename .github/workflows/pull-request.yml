@@ -50,12 +50,12 @@ jobs:
             - name: Maven Build
               run: mvn clean install 
             - name: Ballerina Download
-              run: sudo wget https://dist.ballerina.io/downloads/swan-lake-alpha5/ballerina-swan-lake-alpha5.zip
+              run: sudo wget https://dist.ballerina.io/downloads/swan-lake-beta2/ballerina-swan-lake-beta2.zip
             - name: Use Ballerina zip version
               run: sudo apt-get install -y unzip
-            - run: sudo unzip  ballerina-swan-lake-alpha5.zip
+            - run: sudo unzip  ballerina-swan-lake-beta2.zip
               env: 
                   JAVA_HOME: /usr/lib/jvm/default-jvm
                   JAVA_OPTS: -DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true 
             - name: Ballerina Build 
-              run: /home/runner/work/module-ballerinax-redis/module-ballerinax-redis/ballerina-swan-lake-alpha5/bin/bal build redis
+              run: /home/runner/work/module-ballerinax-redis/module-ballerinax-redis/ballerina-swan-lake-beta2/bin/bal build redis
