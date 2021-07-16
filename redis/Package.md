@@ -1,120 +1,21 @@
-## Module Overview
+Connects to Redis from Ballerina
 
-This module provides the functionality required to access and manipulate key-value data stored in a Redis database.
-Currently the provided functionality is limited to usage Redis as a database/cache. Broker functionality of Redis is
-not yet exposed through this module.
+### Package Overview
 
-### Client
+The `ballerinax/redis` is a [Ballerina](https://ballerina.io/) connector for Redis.
 
-To access a Redis datasource, you must first create a `client`object. Create a client of the redis client type
-(i.e. `redis:Client`) and provide the necessary connection parameters. This will create a connection/pool of
-connections to the given Redis database. A sample for creating a client with a Redis client can be found
-below.
+This package provides the capability to easily access Redis and it provides the functionality required to access and manipulate key-value data stored in a Redis database.
 
-### Database operations
+## Compatibility
+|                             |            Versions      |
+|:---------------------------:|:------------------------:|
+| Ballerina Language          |     Swan Lake Beta 2     |
 
-Once the client is created, redis commands can be executed through that client.
+### Report Issues
 
-## Samples
+To report bugs, request new features, start new discussions, view project boards, etc., go to the [Ballerina Redis repository](https://github.com/ballerina-platform/module-ballerinax-redis)
 
-### Creating a Client
-
-```ballerina
-redis:Client conn = check new ({
-    host: "localhost:6379",
-    password: "",
-    options: { connectionPooling: true, isClusterConnection: false, ssl: false,
-        startTls: false, verifyPeer: false, database: 0, connectionTimeout: 
-        500 }
-});
-```
-
-This module provides API functions for manipulating Redis String, Hash, List, Set and Sorted Set data types and
-basic Redis key/connection commands. For the full list of available configuration options refer the API docs of the
-client.
-
-## Example Usage
-```ballerina
-// Ping Server
-string result = checkpanic conn->ping();
-io:println(result);
-
-// String Operations
-var stringSetresult = conn->set("Project", "Ballerina");
-
-if (stringSetresult is string) {
-    io:println("Reply from the server: " + stringSetresult);
-} else {
-    io:println("Error occurred while calling `setVal`");
-}
-
-var value = conn->get("Project");
-
-if (value is string) {
-    io:println("Reply from the server: " + value);
-} else if (value is ()) {
-    io:println("Key does not exist");
-} else {
-    io:println("Error occurred while calling `get`");
-}
-
-// List Operations
-
-var listPushresult = conn->lPush("NumberList", ["One", "Two"]);
-
-if (listPushresult is int) {
-    io:println("Number of elements pushed: " + listPushresult);
-} else {
-    io:println("Error occurred while calling `lPush`");
-}
-
-var lPopResult = conn->lPop("NumberList");
-
-if (lPopResult is string) {
-    io:println("Popped element: " + lPopResult);
-} else if (lPopResult is ()) {
-    io:println("Key does not exist");
-} else {
-    io:println("Error occurred while calling `lPop`");
-}
-
-// Set Oprerations
-
-var setAddResult = conn->sAdd("NumberSet", ["1", "2", "3"]);
-
-if (setAddResult is int) {
-    io:println("Number of elements added: " + setAddResult);
-} else {
-    io:println("Error occurred while calling `sAdd`");
-}
-
-var setCardResult = conn->sCard("NumberSet");
-
-if (setCardResult is int) {
-    io:println("Number of memebers in the set: " + setCardResult);
-} else {
-    io:println("Error occurred while calling `sCard`");
-}
-
-// Hash Operations
-
-var hashSetResult = conn->hSet("HashKey", "Name", "Manuri");
-
-if (hashSetResult is boolean) {
-    io:println("Hash set status: " + hashSetResult);
-} else {
-    io:println("Error occurred while calling `hSet`");
-}
-
-var hashGetResult = conn->hGet("HashKey", "Name");
-
-if (hashGetResult is string) {
-    io:println("Value of the hash field: " + hashGetResult);
-} else {
-    io:println("Error occurred while calling `hGet`");
-}
-
-// Closing the client
-
-conn.stop();
-```
+### Useful Links
+- Discuss code changes of the Ballerina project in [ballerina-dev@googlegroups.com](mailto:ballerina-dev@googlegroups.com).
+- Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
+- Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag

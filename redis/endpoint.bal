@@ -23,7 +23,9 @@ public client class Client {
 
     handle datasource;
 
-    # Gets called when the endpoint is being initialized during the module initialization.
+    # Initializes the Redis client endpoint.
+    #
+    # + config - Configurations required to initialize the `Client` endpoint
     public function init(ClientEndpointConfiguration config) returns error? {
         self.datasource = initClient(config);
     }

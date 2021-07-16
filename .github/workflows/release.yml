@@ -77,7 +77,7 @@ jobs:
         - name: Maven Build
           run: mvn clean install 
         - name: Ballerina Build
-          uses: ballerina-platform/ballerina-action/@slalpha5
+          uses: ballerina-platform/ballerina-action/@master
           with:
             args:
               build -c --skip-tests redis
@@ -85,7 +85,7 @@ jobs:
             JAVA_HOME: /usr/lib/jvm/default-jvm 
             JAVA_OPTS: -DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true
         - name: Ballerina Push
-          uses: ballerina-platform/ballerina-action/@slalpha5
+          uses: ballerina-platform/ballerina-action/@master
           with:
             args: 
               push
