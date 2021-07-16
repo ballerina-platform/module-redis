@@ -34,3 +34,15 @@ Execute the commands below to build from the source after installing Ballerina S
     ```
     bal build -c --skip-tests ./redis
     ```
+# Contributing to Ballerina
+As an open source project, Ballerina welcomes contributions from the community. 
+
+For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/main/CONTRIBUTING.md).
+
+# Code of Conduct
+All contributors are encouraged to read the [Ballerina Code of Conduct](https://ballerina.io/code-of-conduct).
+
+# Useful Links
+* Discuss about code changes of the Ballerina project in [ballerina-dev@googlegroups.com](mailto:ballerina-dev@googlegroups.com).
+* Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
+* Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
